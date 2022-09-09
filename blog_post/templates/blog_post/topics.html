@@ -1,0 +1,18 @@
+{% extends 'blog_post/base.html' %}
+{% block page_header %}
+	<h1>Topics</h1>
+{% endblock page_header %}
+
+{% block content %}
+
+<p> Topics</p>
+<ul>
+	{% for topic in topics %}
+	<li><h3>
+		<a href="{% url 'blog_post:topic' topic.id %}">{{topic}}</a>
+	</li></h3>
+	{% endfor %}
+</ul>
+<h3><a href="{% url 'blog_post:new_topic'  %}">Add new topic</a></h3>
+
+{% endblock content %}
